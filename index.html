@@ -1,0 +1,30 @@
+<html>
+<body>
+    <div id="menu"></div>
+    <link rel="stylesheet" href="style.css">
+    <script src="gb-menu.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            new Gb.Menu({
+                buttons: [
+		            { title: "Item 1", href: "#/page1" },
+		            { title: "Item 2", href: "#/page2" },
+		            { title: "Item 3", href: "#/page3" }
+                ],
+                activeHref: '#/page2',
+                css: {
+                    container: 'gbNavContainer',
+                    caption: "gbNavButtonInnerDiv",
+                    button: {
+                        button: 'gbNavButton',
+                        buttonOn: "gbNavButtonOn",
+                        buttonOff: "gbNavButtonOff",
+                        buttonFirst: "gbNavButtonFirst",
+                        buttonLast: "gbNavButtonLast"
+                    }
+                }
+            }).applyTo(document.getElementById('menu'));
+        });
+    </script>
+</body>
+</html>

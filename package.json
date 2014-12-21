@@ -1,0 +1,28 @@
+{
+    "name": "gb-menu",
+    "version": "1.0.0",
+    "description": "A simple HTML menu script",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/GaryB432/gb-menu.git"
+    },
+    "keywords": [
+        "menu",
+        "script",
+        "js"
+    ],
+    "author": "Gary Bortosky <gary@bortosky.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/GaryB432/gb-menu/issues"
+    },
+    "homepage": "https://github.com/GaryB432/gb-menu",
+    "devDependencies": {
+        "event-stream": "^3.1.7",
+        "gulp-typescript": "^2.3.0"
+    }
+}
