@@ -12,7 +12,6 @@
     "script"
   ],
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/*.ts",
     "node_modules",
