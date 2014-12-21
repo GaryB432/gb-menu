@@ -28,9 +28,11 @@ Either way, use the menu like this
 
 ```html
 <html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
 <body>
     <div id="menu"></div>
-    <link rel="stylesheet" href="style.css">
     <script src="gb-menu.js"></script>
     <script>
         window.addEventListener("load", function () {
@@ -56,7 +58,8 @@ Either way, use the menu like this
         });
     </script>
 </body>
-</html>```
+</html>
+```
 
 This will apply the menu as defined to the menu element like this:
 
@@ -80,22 +83,11 @@ This will apply the menu as defined to the menu element like this:
 </div>
 ```
 
-Then add `ngRoute` as a dependency for your app:
-
-```javascript
-angular.module('myApp', ['ngRoute']);
-```
-
-## Documentation
-
-Documentation is available on the
-[AngularJS docs site](http://docs.angularjs.org/api/ngRoute).
-
 ## License
 
 The MIT License
 
-Copyright (c) 2010-2012 Google, Inc. http://angularjs.org
+Copyright (c) 2015 Gary Bortosky
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
