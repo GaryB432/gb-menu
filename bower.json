@@ -1,22 +1,18 @@
 {
-  "name": "gb-menu",
-  "version": "1.0.0",
-  "authors": [
-    "Gary Bortosky <gary@bortosky.com>"
-  ],
-  "description": "Simple HTML menu script",
-  "main": "gb-menu.js",
-  "keywords": [
-    "html",
-    "menu",
-    "script"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/*.ts",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+    "name": "gb-menu",
+    "version": "2.0.0",
+    "authors": [
+        "Gary Bortosky <gary@bortosky.com>"
+    ],
+    "description": "Simple HTML menu script",
+    "main": "gb-menu.js",
+    "keywords": [
+        "menu",
+        "script",
+        "js"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "node_modules"
+    ]
 }

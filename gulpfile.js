@@ -1,16 +1,17 @@
 var gulp = require('gulp');
 var ts = require('gulp-typescript');
-var eventStream = require('event-stream');
+var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('scripts', function () {
-    return gulp
-        .src('*.ts')
-        .pipe(ts({ noImplicitAny: true }))
-        .pipe(gulp.dest(''));
-});
+    var tsProject = ts.createProject({ declarationFiles: true, noImplicitAny: true });
+    var tsResult = gulp.src('*.ts').pipe(ts(tsProject));
 
-gulp.task('wtf', function () {
-    console.log('wtf');
+    tsResult.dts.pipe(gulp.dest('typings/gbmenu'));
+
+    return tsResult.js
+        .pipe(sourcemaps.init())
+        .pipe(gulp.dest(''))
+        .pipe(sourcemaps.write('.'));
 });
 
 gulp.task('default', ['scripts']);
