@@ -24,7 +24,7 @@ Add a `<script>` to your `index.html`:
 bower install gb-menu
 ```
 
-Either way, use the menu like this
+Either way, use the menu like this.
 
 ```html
 <html>
@@ -60,6 +60,8 @@ Either way, use the menu like this
 </body>
 </html>
 ```
+
+Note that you can leave the `css` object undefined to default to the values shown in the above example.
 
 This will apply the menu as defined to the menu element like this:
 

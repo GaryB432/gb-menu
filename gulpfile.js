@@ -3,16 +3,17 @@ var ts = require('gulp-typescript');
 var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('scripts', function () {
-    var tsProject = ts.createProject({ declarationFiles: true, noImplicitAny: true });
-    var tsResult = gulp.src('*.ts').pipe(ts(tsProject));
-
-    tsResult.dts.pipe(gulp.dest('typings/gbmenu'));
-
-    return tsResult.js
+    return tsResult = gulp.src('*.ts')
         .pipe(sourcemaps.init())
-        .pipe(gulp.dest(''))
-        .pipe(sourcemaps.write('.'));
+        .pipe(ts({ noImplicitAny: true })).js
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(''));
 });
 
-gulp.task('default', ['scripts']);
+gulp.task('defs', function () {
+    return gulp.src('*.ts')
+        .pipe(ts({ declarationFiles: true, noImplicitAny: true })).dts.pipe(gulp.dest('typings/gbmenu'));
+});
+
+gulp.task('default', ['scripts', 'defs']);
 

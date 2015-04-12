@@ -2,8 +2,8 @@
     "use strict";
     export interface IOptions {
         buttons: IButton[];
-        activeHref: string;
-        css: IClasses;
+        activeHref?: string;
+        css?: IClasses;
     }
 
     export interface IClasses {
@@ -27,6 +27,19 @@
 
     export class Menu {
         constructor(private options: IOptions) {
+            if (!this.options.css) {
+                this.options.css = {
+                    container: 'gbNavContainer',
+                    caption: "gbNavButtonInnerDiv",
+                    button: {
+                        button: 'gbNavButton',
+                        buttonOn: "gbNavButtonOn",
+                        buttonOff: "gbNavButtonOff",
+                        buttonFirst: "gbNavButtonFirst",
+                        buttonLast: "gbNavButtonLast"
+                    }
+                }
+            }
         }
 
         applyTo(container: HTMLElement): void {

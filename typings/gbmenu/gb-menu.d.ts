@@ -1,8 +1,8 @@
 declare module Gb {
     interface IOptions {
         buttons: IButton[];
-        activeHref: string;
-        css: IClasses;
+        activeHref?: string;
+        css?: IClasses;
     }
     interface IClasses {
         container: string;

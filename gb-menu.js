@@ -4,6 +4,19 @@ var Gb;
     var Menu = (function () {
         function Menu(options) {
             this.options = options;
+            if (!this.options.css) {
+                this.options.css = {
+                    container: 'gbNavContainer',
+                    caption: "gbNavButtonInnerDiv",
+                    button: {
+                        button: 'gbNavButton',
+                        buttonOn: "gbNavButtonOn",
+                        buttonOff: "gbNavButtonOff",
+                        buttonFirst: "gbNavButtonFirst",
+                        buttonLast: "gbNavButtonLast"
+                    }
+                };
+            }
         }
         Menu.prototype.applyTo = function (container) {
             var _this = this;
@@ -34,3 +47,5 @@ var Gb;
     })();
     Gb.Menu = Menu;
 })(Gb || (Gb = {}));
+
+//# sourceMappingURL=gb-menu.js.map
