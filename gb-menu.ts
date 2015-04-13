@@ -42,13 +42,13 @@
             }
         }
 
-        applyTo(container: HTMLElement): void {
+        applyTo(container: HTMLElement, doc: Document = document): void {
             container.setAttribute("class", this.options.css.container);
 
             this.options.buttons.forEach((btn: IButton, n: number) => {
-                var buttonDiv = document.createElement("div"),
-                    innerDiv = document.createElement("div"),
-                    anchor = document.createElement("a"),
+                var buttonDiv = doc.createElement("div"),
+                    innerDiv = doc.createElement("div"),
+                    anchor = doc.createElement("a"),
                     active = btn.href === this.options.activeHref,
                     buttonClasses: string[] = [this.options.css.button.button, active ? this.options.css.button.buttonOn : this.options.css.button.buttonOff];
 
@@ -74,6 +74,11 @@
                 }
                 container.appendChild(buttonDiv);
             });
+        }
+
+        static create(options: IOptions, container: HTMLElement, doc: Document = document): HTMLElement {
+            new Menu(options).applyTo(container, doc);
+            return container;
         }
     }
 }

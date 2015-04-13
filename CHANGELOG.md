@@ -1,4 +1,10 @@
-﻿<a name="v2.0.0"></a>
+﻿<a name="v2.1.0"></a>
+# v2.0.0 (2015-04-12) #
+
+### Features
+- new static `create` method on Gb.Menu to create and apply a menu to an `HTMLElement`
+
+<a name="v2.0.0"></a>
 # v2.0.0 (2015-04-12) #
 
 ### Features

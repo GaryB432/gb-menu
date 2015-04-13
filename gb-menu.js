@@ -18,11 +18,12 @@ var Gb;
                 };
             }
         }
-        Menu.prototype.applyTo = function (container) {
+        Menu.prototype.applyTo = function (container, doc) {
             var _this = this;
+            if (doc === void 0) { doc = document; }
             container.setAttribute("class", this.options.css.container);
             this.options.buttons.forEach(function (btn, n) {
-                var buttonDiv = document.createElement("div"), innerDiv = document.createElement("div"), anchor = document.createElement("a"), active = btn.href === _this.options.activeHref, buttonClasses = [_this.options.css.button.button, active ? _this.options.css.button.buttonOn : _this.options.css.button.buttonOff];
+                var buttonDiv = doc.createElement("div"), innerDiv = doc.createElement("div"), anchor = doc.createElement("a"), active = btn.href === _this.options.activeHref, buttonClasses = [_this.options.css.button.button, active ? _this.options.css.button.buttonOn : _this.options.css.button.buttonOff];
                 if (n === 0) {
                     buttonClasses.push(_this.options.css.button.buttonFirst);
                 }
@@ -43,9 +44,13 @@ var Gb;
                 container.appendChild(buttonDiv);
             });
         };
+        Menu.create = function (options, container, doc) {
+            if (doc === void 0) { doc = document; }
+            new Menu(options).applyTo(container, doc);
+            return container;
+        };
         return Menu;
     })();
     Gb.Menu = Menu;
 })(Gb || (Gb = {}));
-
 //# sourceMappingURL=gb-menu.js.map

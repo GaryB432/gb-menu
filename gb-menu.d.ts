@@ -23,6 +23,7 @@ declare module Gb {
     class Menu {
         private options;
         constructor(options: IOptions);
-        applyTo(container: HTMLElement): void;
+        applyTo(container: HTMLElement, doc?: Document): void;
+        static create(options: IOptions, container: HTMLElement, doc?: Document): HTMLElement;
     }
 }
