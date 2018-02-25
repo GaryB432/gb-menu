@@ -1,4 +1,4 @@
-# packaged gb-menu
+# packaged gb-menu VERSION 2 (OLD)
 
 This repo is for distribution on `npm` and `bower`.
 

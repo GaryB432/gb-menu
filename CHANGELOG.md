@@ -1,4 +1,10 @@
-﻿<a name="v2.1.0"></a>
+﻿<a name="v0.0.0"></a>
+# v3.0.0 (2018-02-24) #
+
+### Features
+- complete rewrite
+
+<a name="v2.1.0"></a>
 # v2.0.0 (2015-04-12) #
 
 ### Features
