@@ -22,11 +22,11 @@ describe('a few items', () => {
       {
         items: [
           {
-            text: 'b1',
             items: [
               { items: [{ text: 'b1a1' }, { text: 'b1a2' }], text: 'b1a' },
               { text: 'b1b' },
             ],
+            text: 'b1',
           },
           { href: '/b2', text: 'b2' },
         ],
