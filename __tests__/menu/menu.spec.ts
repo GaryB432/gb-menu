@@ -1,4 +1,4 @@
-import { Activator, Menu, SubMenuLine } from './menu';
+import { Activator, Menu, SubMenuLine } from '../../src/menu/menu';
 
 it('should be defined', () => {
   const doc = new Menu(new Activator('test'));
