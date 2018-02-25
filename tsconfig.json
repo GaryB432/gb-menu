@@ -4,14 +4,18 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "lib": [
-      "esnext"
+      "dom",
+      "es2015"
     ],
-    "target": "es2015",
+    "target": "es5",
     "strict": true,
     "outDir": "./lib",
     "preserveConstEnums": true,
     "removeComments": true,
     "inlineSourceMap": true,
+    "noUnusedLocals": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
     "typeRoots": [
       "./node_modules/@types"
     ]
