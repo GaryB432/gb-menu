@@ -20,6 +20,9 @@
     "lib",
     "lib2015"
   ],
+  "scripts": {
+    "prepare": "gulp"
+  },
   "main": "lib/index.js",
   "module": "lib2015/index.js",
   "typings": "lib/index.d.ts",

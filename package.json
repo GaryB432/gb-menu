@@ -1,6 +1,6 @@
 {
   "name": "gb-menu-app",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "gb-menu-app",
   "scripts": {
     "clean": "rimraf dist",
@@ -11,6 +11,7 @@
     "test": "jest",
     "test-watch": "jest --watch"
   },
+  "private": true,
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^20.0.5",
