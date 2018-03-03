@@ -1,4 +1,4 @@
-import '../styles/monochrome.scss';
+import '../styles/dark.scss';
 
 import { Item } from './models';
 import { NavBar } from './navbar';

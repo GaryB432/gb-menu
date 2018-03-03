@@ -1,11 +1,21 @@
 @mixin base-color() {
-  background: $color1;
-  color: $color2;
+  background: $color5;
+  color: $color1;
+  svg {
+    path {
+      fill: $color1;
+    }
+  }
 }
 
 @mixin accent-color() {
-  background: $color2;
-  color: $color1;
+  background: $color1;
+  color: $color5;
+  svg {
+    path {
+      fill: $color5;
+    }
+  }
 }
 
 nav.gbm {
@@ -20,8 +30,7 @@ nav.gbm {
       line-height: 2rem;
       &.open,
       &:hover {
-        background-color: $color2;
-        color: $color1;
+        @include accent-color();
       }
     }
   }
@@ -55,7 +64,7 @@ ul.gbm {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid $color1;
+    border: 1px solid $color5;
     padding: 0.5rem;
   }
 }
@@ -66,11 +75,6 @@ ul.gbm {
     &.open,
     &:hover {
       @include accent-color();
-      svg {
-        path {
-          fill: $color1;
-        }
-      }
     }
     a {
       text-decoration: none;
@@ -84,13 +88,9 @@ ul.gbm {
 
 ul.gbm {
   .submenu {
+    @include base-color();
     div {
       margin-right: 1rem;
-    }
-    svg {
-      & path {
-        fill: $color2;
-      }
     }
   }
 }
