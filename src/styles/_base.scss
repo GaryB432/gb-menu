@@ -22,12 +22,12 @@ nav.gbm {
   font: normal bold 12px/30px Arial, sans-serif;
   & > ul {
     @include base-color();
-    cursor: pointer;
     display: flex;
     flex-direction: row;
     li {
       padding: 0 2rem;
       line-height: 2rem;
+      cursor: pointer;
       &.open,
       &:hover {
         @include accent-color();
