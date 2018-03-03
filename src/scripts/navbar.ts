@@ -1,3 +1,4 @@
+import { createElement, createElementNS } from './factory/elements';
 import { Menu, SubMenuLine } from './menu/menu';
 import { MenuElement } from './menu/menu-element';
 import { Item } from './models';
@@ -22,7 +23,7 @@ export class NavBar {
         m.element.classList.add('menu');
         container.appendChild(m.element);
       } else {
-        const nav = document.createElement('nav');
+        const nav = createElement('nav');
         nav.appendChild(m.element);
         container.appendChild(nav);
       }
@@ -60,13 +61,13 @@ export class NavBar {
           li = target!.activator;
           this.fillSubMenuLI(li, line);
         } else {
-          li = document.createElement('li');
+          li = createElement('li');
           if (line.title === '-') {
-            const hr = document.createElement('hr');
+            const hr = createElement('hr');
             li.classList.add('separator');
             li.appendChild(hr);
           } else {
-            const a = document.createElement('a');
+            const a = createElement('a');
             a.href = line.href || '#';
             li.classList.add('anchor');
             a.textContent = line.title;
@@ -82,7 +83,7 @@ export class NavBar {
 
   private fillSubMenuLI(li: HTMLLIElement, line: SubMenuLine) {
     const grandParent = line.menu.parent!.parent;
-    const title = document.createElement('div');
+    const title = createElement('div');
     li.innerHTML = '';
     title.innerText = line.title;
     li.appendChild(title);
@@ -94,8 +95,8 @@ export class NavBar {
 
   private newCaretElement(): SVGElement {
     const svgNS = 'http://www.w3.org/2000/svg';
-    const svg = document.createElementNS(svgNS, 'svg');
-    const path = document.createElementNS(svgNS, 'path');
+    const svg = createElementNS(svgNS, 'svg');
+    const path = createElementNS(svgNS, 'path');
     svg.setAttribute('viewBox', '0 0 638 1030');
     svg.setAttribute('width', '12');
     svg.setAttribute('height', '12');

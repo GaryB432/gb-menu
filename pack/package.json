@@ -1,0 +1,44 @@
+{
+  "name": "gb-menu",
+  "version": "3.0.0",
+  "description": "A package of an HTML menu script",
+  "author": "Gary Bortosky <gary@bortosky.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GaryB432/gb-menu.git"
+  },
+  "keywords": [
+    "navbar",
+    "navigation",
+    "typescript",
+    "menu",
+    "script",
+    "js"
+  ],
+  "files": [
+    "lib",
+    "lib2015"
+  ],
+  "main": "lib/index.js",
+  "module": "lib2015/index.js",
+  "typings": "lib/index.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^8.0.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-typescript": "^4.0.1",
+    "merge-stream": "^1.0.1",
+    "tslib": "^1.9.0",
+    "typescript": "^2.3.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/GaryB432/gb-menu/issues"
+  },
+  "homepage": "https://github.com/GaryB432/gb-menu"
+}

@@ -1,3 +1,4 @@
+import { createElement } from '../factory/elements';
 import { Menu } from '../menu/menu';
 
 function px(pixels: number): string {
@@ -8,9 +9,9 @@ export class MenuElement {
   public readonly activator: HTMLLIElement;
   public readonly element: HTMLUListElement;
   constructor(public menu: Menu, public parent?: MenuElement) {
-    this.activator = document.createElement('li');
+    this.activator = createElement('li');
     this.activator.innerText = 'root';
-    this.element = document.createElement('ul');
+    this.element = createElement('ul');
   }
   public addListeners() {
     this.element.addEventListener('mouseenter', () => {

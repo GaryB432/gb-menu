@@ -3,5 +3,8 @@
     "tslint:latest",
     "tslint-config-prettier",
     "tslint-config-gb"
-  ]
+  ],
+  "rules": {
+    "no-console": false
+  }
 }

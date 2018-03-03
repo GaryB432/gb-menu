@@ -1,4 +1,4 @@
-import { Activator, Menu, SubMenuLine } from '../../src/menu/menu';
+import { Activator, Menu, SubMenuLine } from './menu';
 
 it('should be defined', () => {
   const doc = new Menu(new Activator('test'));
@@ -22,11 +22,11 @@ describe('a few items', () => {
       {
         items: [
           {
+            text: 'b1',
             items: [
               { items: [{ text: 'b1a1' }, { text: 'b1a2' }], text: 'b1a' },
               { text: 'b1b' },
             ],
-            text: 'b1',
           },
           { href: '/b2', text: 'b2' },
         ],

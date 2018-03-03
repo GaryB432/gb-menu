@@ -1,6 +1,5 @@
-coverage/
-node_modules/
-npm-debug.log
-.nyc_output
-lib
-lib_test
+node_modules
+dist
+results
+pack/lib
+pack/lib2015

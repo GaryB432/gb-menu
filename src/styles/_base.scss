@@ -1,0 +1,105 @@
+@mixin base-color() {
+  background: $color1;
+  color: $color2;
+}
+
+@mixin accent-color() {
+  background: $color2;
+  color: $color1;
+}
+
+nav.gbm {
+  font: normal bold 12px/30px Arial, sans-serif;
+  & > ul {
+    @include base-color();
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    li {
+      padding: 0 2rem;
+      line-height: 2rem;
+      &.open,
+      &:hover {
+        background-color: $color2;
+        color: $color1;
+      }
+    }
+  }
+}
+
+ul.gbm {
+  font: normal bold 12px/18px Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  &.menu {
+    @include base-color();
+    position: absolute;
+    display: none;
+    &.open {
+      display: block;
+    }
+    &.init {
+      opacity: 0;
+      display: block;
+    }
+    flex-direction: column;
+  }
+}
+
+ul.gbm {
+  .anchor,
+  .separator,
+  .submenu {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $color1;
+    padding: 0.5rem;
+  }
+}
+
+ul.gbm {
+  .submenu,
+  .anchor {
+    &.open,
+    &:hover {
+      @include accent-color();
+      svg {
+        path {
+          fill: $color1;
+        }
+      }
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      &:visited {
+        color: inherit;
+      }
+    }
+  }
+}
+
+ul.gbm {
+  .submenu {
+    div {
+      margin-right: 1rem;
+    }
+    svg {
+      & path {
+        fill: $color2;
+      }
+    }
+  }
+}
+
+ul.gbm {
+  hr {
+    color: $color2;
+    border-style: inset;
+    border-width: thin;
+    width: 100%;
+  }
+}
