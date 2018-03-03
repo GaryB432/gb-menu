@@ -42,3 +42,5 @@ npm start
 cd pack
 gulp
 ```
+
+themes from [w3schools](https://www.w3schools.com/colors/colors_monochromatic.asp).
