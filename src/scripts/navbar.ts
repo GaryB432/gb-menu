@@ -2,8 +2,10 @@ import { createElement, createElementNS } from './factory/elements';
 import { Menu, SubMenuLine } from './menu/menu';
 import { MenuElement } from './menu/menu-element';
 import { Item } from './models';
+import { State } from './state';
 
 export class NavBar {
+  private state: State = new State();
   constructor(private items: Item[]) {}
 
   public run(container: HTMLElement): void {
@@ -43,7 +45,7 @@ export class NavBar {
 
     const take = (menu: Menu, parent?: MenuElement): void => {
       menus.push(menu);
-      const nme = new MenuElement(menu, parent);
+      const nme = new MenuElement(menu, parent, this.state);
       mes.push(nme);
       menu.lines.forEach(ml => {
         if (ml instanceof SubMenuLine) {
