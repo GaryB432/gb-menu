@@ -10,21 +10,38 @@ export class State {
       case 'activating':
       case 'entering': {
         this.walkToRoot(sender, e => {
+          e.element.classList.remove('closing');
           e.element.classList.add('open');
           e.activator.classList.add('open');
         });
         break;
       }
       case 'leaving': {
-        this.walkToRoot(sender, e => {
-          e.element.classList.remove('open');
-          e.activator.classList.remove('open');
-        });
+        if (sender.parent) {
+          sender.element.addEventListener(
+            'transitionend',
+            () => {
+              this.walkToRoot(sender, s => {
+                if (s.element.classList.contains('closing')) {
+                  s.element.classList.remove('open', 'closing');
+                } else {
+                  console.log('hmmm 34');
+                  s.element.classList.remove('open');
+                }
+                s.activator.classList.remove('open');
+              });
+            },
+            { once: true }
+          );
+          sender.element.classList.add('closing');
+        } else {
+          sender.element.classList.remove('open');
+        }
         break;
       }
       case 'deactivating': {
         sender.activator.classList.remove('open');
-        sender.element.classList.remove('open');
+        sender.element.classList.remove('open', 'closing');
         break;
       }
     }
