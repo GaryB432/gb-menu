@@ -47,8 +47,10 @@ export class MenuElement {
   }
   public open(): void {
     this.element.classList.add('open');
+    this.activator.classList.add('open');
   }
   public close(): void {
     this.element.classList.remove('open');
+    this.activator.classList.remove('open');
   }
 }
