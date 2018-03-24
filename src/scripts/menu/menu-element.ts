@@ -45,4 +45,10 @@ export class MenuElement {
       }
     }
   }
+  public open(): void {
+    this.element.classList.add('open');
+  }
+  public close(): void {
+    this.element.classList.remove('open');
+  }
 }

@@ -3,60 +3,35 @@ import { MenuElement } from './menu/menu-element';
 export type ActionType = 'activating' | 'entering' | 'leaving' | 'deactivating';
 
 export class State {
-  private lastAction?: ActionType;
-  private lastSender?: MenuElement;
+  private activated?: MenuElement;
+  private entered?: MenuElement;
   public receive(action: ActionType, sender: MenuElement) {
     switch (action) {
-      case 'activating':
+      case 'activating': {
+        // sender.open();
+        this.activated = sender;
+        this.activated.open();
+        break;
+      }
       case 'entering': {
-        this.walkToRoot(sender, e => {
-          e.element.classList.remove('closing');
-          e.element.classList.add('open');
-          e.activator.classList.add('open');
-        });
+        this.entered = sender;
+        this.walkToRoot(sender, s => s.open());
         break;
       }
       case 'leaving': {
-        if (sender.parent) {
-          sender.element.addEventListener(
-            'transitionend',
-            () => {
-              this.walkToRoot(sender, s => {
-                if (s.element.classList.contains('closing')) {
-                  s.element.classList.remove('open', 'closing');
-                } else {
-                  console.log('hmmm 34');
-                  s.element.classList.remove('open');
-                }
-                s.activator.classList.remove('open');
-              });
-            },
-            { once: true }
-          );
-          sender.element.classList.add('closing');
-        } else {
-          sender.element.classList.remove('open');
-        }
+        // this.entered!.close();
+        this.walkToRoot(this.entered!, s => s.close());
+        this.entered = undefined;
         break;
       }
       case 'deactivating': {
-        sender.activator.classList.remove('open');
-        sender.element.classList.remove('open', 'closing');
+        if (this.entered !== sender) {
+          this.activated!.close();
+        }
+        this.activated = undefined;
         break;
       }
     }
-    console.log(
-      // sender.menu.parent,
-      action,
-      sender.parent,
-      sender === this.lastSender,
-      sender.menu.toString(),
-      // '<>',
-      // this.lastSender ? this.lastSender.menu.toString() : '?',
-      this.lastAction
-    );
-    this.lastAction = action;
-    this.lastSender = sender;
   }
   private walkToRoot(e: MenuElement, cb: (m: MenuElement) => void) {
     cb(e);
